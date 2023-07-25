@@ -28,29 +28,29 @@ spec:
               - mountPath: /config/config.yaml
                 name: dew-hw3-go-consumer-configmap-file
                 subPath: config.yaml
-          ports:
-            - name: http
-              containerPort: 8080
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-            timeoutSeconds: 10
-            initialDelaySeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-            timeoutSeconds: 10
-            initialDelaySeconds: 10
-          resources:
-            limits:
-              cpu: 64m
-              memory: 64Mi
-            requests:
-              cpu: 32m
-              memory: 32Mi
+          # ports:
+          #   - name: http
+          #     containerPort: 8080
+          #     protocol: TCP
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          #   timeoutSeconds: 10
+          #   initialDelaySeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          #   timeoutSeconds: 10
+          #   initialDelaySeconds: 10
+          # resources:
+          #   limits:
+          #     cpu: 64m
+          #     memory: 64Mi
+          #   requests:
+          #     cpu: 32m
+          #     memory: 32Mi
       volumes:
         - name: dew-hw3-go-consumer-secret-file
           secret:
